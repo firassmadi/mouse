@@ -48,6 +48,5 @@ while True:
     if cv2.waitKey(1) & 0xFF == 27:
         break
 
-# Release the webcam and close windows
 cap.release()
 cv2.destroyAllWindows()
