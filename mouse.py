@@ -2,7 +2,7 @@ import cv2
 import mediapipe as mp
 import pyautogui
 
-# Initialize webcam and Mediapipe hand detector
+
 cap = cv2.VideoCapture(0)
 hand_detector = mp.solutions.hands.Hands()
 drawing_utils = mp.solutions.drawing_utils
@@ -10,7 +10,7 @@ screen_width, screen_height = pyautogui.size()
 index_y = 0
 
 while True:
-    # Capture frame from webcam
+    
     _, frame = cap.read()
     frame = cv2.flip(frame, 1)
     frame_height, frame_width, _ = frame.shape
@@ -41,10 +41,10 @@ while True:
                     elif abs(index_y - thumb_y) < 100:
                         pyautogui.moveTo(index_x, index_y)
 
-    # Display the frame
+
     cv2.imshow('Virtual Mouse', frame)
 
-    # Check for 'Esc' key press to exit
+
     if cv2.waitKey(1) & 0xFF == 27:
         break
 
